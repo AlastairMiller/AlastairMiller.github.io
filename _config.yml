@@ -1,0 +1,16 @@
+title: Alastair Miller
+description: Notes on software, side projects and whatever else I'm thinking about.
+author: Alastair Miller
+url: https://alastairmiller.github.io
+avatar: /assets/avatar.svg
+github: alastairmiller
+linkedin: alastairmiller
+
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md

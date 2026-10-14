@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  {% feed_meta %}
+  {% seo %}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img class="avatar" src="{{ site.avatar | relative_url }}" alt="" width="40" height="40">
+      <span>{{ site.title }}</span>
+    </a>
+    <nav><a href="{{ '/about/' | relative_url }}">About</a></nav>
+  </header>
+  <main id="main">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <a href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://github.com/{{ site.github }}">GitHub</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://www.linkedin.com/in/{{ site.linkedin }}">LinkedIn</a>
+  </footer>
+</body>
+</html>
