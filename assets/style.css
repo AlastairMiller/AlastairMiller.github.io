@@ -3,7 +3,9 @@
   --text: #1c1c1e;
   --muted: #6e6e73;
   --rule: #e5e5ea;
-  --link: #3b5bdb;
+  --link: #15803d;
+  --link-hover: #166534;
+  --accent-soft: #e8f5ec;
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -12,7 +14,9 @@
     --text: #ececee;
     --muted: #9a9aa0;
     --rule: #2c2c30;
-    --link: #8ea5ff;
+    --link: #5fd38d;
+    --link-hover: #86efac;
+    --accent-soft: #1d2b22;
   }
 }
 * { box-sizing: border-box; }
@@ -25,7 +29,8 @@ body {
   font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 3px; }
+::selection { background: var(--accent-soft); }
 .skip { position: absolute; left: -999px; }
 .skip:focus { left: 1rem; top: 1rem; }
 
@@ -34,11 +39,13 @@ a:hover { text-decoration: underline; }
 .brand:hover { text-decoration: none; }
 .avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
 nav a { color: var(--muted); }
+nav a:hover { color: var(--link); }
 
 .intro { margin-bottom: 2.5rem; }
-.year h2 { font-size: .95rem; color: var(--muted); font-weight: 600; margin: 2rem 0 .5rem; }
+.year h2 { font-size: .95rem; color: var(--link); font-weight: 600; margin: 2rem 0 .5rem; }
 .post-list { list-style: none; margin: 0; padding: 0; }
-.post-list li { display: flex; gap: 1.25rem; padding: .35rem 0; }
+.post-list li { display: flex; gap: 1.25rem; padding: .35rem .5rem; margin: 0 -.5rem; border-radius: 6px; }
+.post-list li:hover { background: var(--accent-soft); }
 .post-list time { flex: 0 0 4rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 
 .post h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 .25rem; }
