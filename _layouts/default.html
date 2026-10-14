@@ -11,7 +11,13 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="{{ '/' | relative_url }}">
-      <img class="avatar" src="{{ site.avatar | relative_url }}" alt="" width="40" height="40">
+      {%- assign fallback_avatar = site.avatar | relative_url %}
+      {%- if site.github %}
+      <img class="avatar" src="https://github.com/{{ site.github }}.png?size=80" alt="" width="40" height="40"
+           onerror="this.onerror=null;this.src='{{ fallback_avatar }}'">
+      {%- else %}
+      <img class="avatar" src="{{ fallback_avatar }}" alt="" width="40" height="40">
+      {%- endif %}
       <span>{{ site.title }}</span>
     </a>
     <nav><a href="{{ '/about/' | relative_url }}">About</a></nav>
